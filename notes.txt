@@ -1,0 +1,15 @@
+NOTES and for brain storming only, nothing final
+
+Project overview
+Create a “DEX aggregator” that will
+automatically route the users’ input fund to any of these exchanges, for a
+preferable output amount. The user should be able to use only one
+transaction to finish his swap, and this transaction should be sent to
+some smart contract you create.
+
+Exchanges
+VVS
+MMF
+
+Referencs
+Uniswap smart order router - compute-all-routes: https://github.com/Uniswap/smart-order-router/blob/cd8587a925f3841f71fb8a14f1d06b87f2975645/src/routers/alpha-router/functions/compute-all-routes.ts
