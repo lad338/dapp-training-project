@@ -13,3 +13,19 @@ MMF
 
 Referencs
 Uniswap smart order router - compute-all-routes: https://github.com/Uniswap/smart-order-router/blob/cd8587a925f3841f71fb8a14f1d06b87f2975645/src/routers/alpha-router/functions/compute-all-routes.ts
+
+Solution 
+Off chain: 
+- Multicall to contracts for latest price
+- DFS for token pairs to find the optimal path (also need to take extra transaction gas as calculation)
+- Return the best path
+
+On chain:
+- A contract that has MMF and VVS adapter to do the swaps
+- Execute the transaction with the path searched off-chain
+- Transaction made with either exact input or exact output
+
+Random NOTES
+For example if I have a path A, B, C, D
+if A, B is from VVS and C, D from MMF
+am I suppose the call the swap token function using VVS router for A, B; then retrieve the interim amount and call MMF router for C,D?
