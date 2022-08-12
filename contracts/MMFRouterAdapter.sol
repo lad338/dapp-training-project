@@ -1,13 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./interface/IRouterAdapter.sol";
-import "./mmf/MeerkatRouter02.sol";
+import "./interfaces/IRouterAdapter.sol";
+import "./mmf/IMeerkatRouter02.sol";
+import "./mmf/MeerkatLibrary.sol";
+import "./interfaces/IERC20.sol";
 
 contract MMFRouterAdapter is IRouterAdapter {
     IMeerkatRouter02 public router;
 
-    function constructor(address routerAddress) {
+    constructor(address routerAddress) {
         router = IMeerkatRouter02(routerAddress);
     }
 

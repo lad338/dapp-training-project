@@ -9,5 +9,5 @@ Using:
 Setup:
 - `yarn install`
 
-
-
+Forking mainnet
+`npx hardhat node --fork https://evm.cronos.org/`

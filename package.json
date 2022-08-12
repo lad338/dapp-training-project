@@ -1,7 +1,9 @@
 {
   "license": "MIT",
   "scripts": {
-    "prettier:ts": "prettier --config .prettierrc '**/*.ts' --write"
+    "prettier:ts": "prettier --config .prettierrc '**/*.ts' --write",
+    "deploy": "ts-node ./scripts/deploy/deploy.ts",
+    "compile": "npx hardhat compile"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.6.4",

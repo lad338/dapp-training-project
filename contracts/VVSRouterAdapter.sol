@@ -1,13 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./interface/IRouterAdapter.sol";
-import "./vvs/VVSRouter.sol";
+import './interfaces/IRouterAdapter.sol';
+import './vvs/IVVSRouter02.sol';
+import './vvs/VVSLibrary.sol';
+import './interfaces/IERC20.sol';
 
 contract VVSRouterAdapter is IRouterAdapter {
     IVVSRouter02 public router;
 
-    function constructor(address routerAddress) {
+    constructor(address routerAddress) {
         router = IVVSRouter02(routerAddress);
     }
 
@@ -16,7 +18,7 @@ contract VVSRouterAdapter is IRouterAdapter {
         address tokenIn,
         address tokenOut
     ) external view override returns (uint256 amountOut) {
-        (uint256 reserveA, uint256 reserveB) = MeerkatLibrary.getReserves(
+        (uint256 reserveA, uint256 reserveB) = VVSLibrary.getReserves(
             router.factory(),
             tokenIn,
             tokenOut
@@ -42,11 +44,11 @@ contract VVSRouterAdapter is IRouterAdapter {
     }
 
     function swapTokensForExactTokens(
-        uint amountOut,
-        uint amountInMax,
+        uint256 amountOut,
+        uint256 amountInMax,
         address[] calldata path,
         address to
-    ) external returns (uint[] memory amounts) {
+    ) external returns (uint256[] memory amounts) {
         IERC20(path[0]).approve(address(router), amountInMax);
         return
             router.swapTokensForExactTokens(
