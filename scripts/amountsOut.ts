@@ -11,7 +11,7 @@ import {
     routeToSubPath,
     verifyCalculatedRoutes,
 } from './functions/computeRoutes'
-import { AmountOutInput, Input, Quote, TokenPair } from './types'
+import { Input, Quote, TokenPair } from './types'
 import { quote, quotesToQuoteMap } from './functions/quote'
 import {
     bigNumberSorter,
@@ -19,16 +19,17 @@ import {
     routeToString,
     toComparableValue,
     comparableValueToHumanReadable,
+    TEN,
 } from './functions/util'
 import { verify } from 'crypto'
 
 const input: Input = {
-    tokenIn: TOKEN.WBTC,
-    tokenOut: TOKEN.USDC,
-    amount: BigNumber.from(1),
+    tokenIn: TOKEN.USDC,
+    tokenOut: TOKEN.WBTC,
+    amount: BigNumber.from(10).mul(TEN.pow(TOKEN_DECIMALS[TOKEN.USDC])),
 }
 
-const main = async (input: AmountOutInput) => {
+const main = async (input: Input) => {
     const [signer] = await ethers.getSigners()
     console.log('signer address: ' + signer.address)
 
@@ -45,7 +46,7 @@ const main = async (input: AmountOutInput) => {
     console.log(
         pairQuotes.map((it) => ({
             ...it,
-            display: routerPairToString(it.pair),
+            displayPair: routerPairToString(it.pair),
         }))
     )
 

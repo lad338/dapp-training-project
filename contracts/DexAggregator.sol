@@ -72,8 +72,12 @@ contract DexAggregator is Ownable {
                 amountIn,
                 subPaths[i].path
             );
-            amount = amountsOut[amountsOut.length - 1];
-            amountIn = amount;
+            for (uint256 j = 0; j < amountsOut.length; j++) {
+                console.log('amountsOut %s(%s): %s', i, j, amountsOut[j]);
+            }
+
+            amountIn = amountsOut[amountsOut.length - 1];
+            amount = amountIn;
         }
     }
 
@@ -91,6 +95,7 @@ contract DexAggregator is Ownable {
                 subPaths[i].path
             );
             uint256 subPathAmountOut = amountsOut[amountsOut.length - 1];
+
             require(
                 IERC20(subPaths[i].path[0]).transferFrom(
                     msg.sender,

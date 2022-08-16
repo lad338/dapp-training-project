@@ -143,15 +143,33 @@ export const verifyCalculatedRoutes = async (
         subPaths: routeToSubPath(it.route),
     }))
 
+    console.log('Getting AmountsOut for all route with subPaths')
+    console.log('input.amount: ')
+    console.log(input.amount)
+    console.log(
+        withSubPaths
+            .filter((it) => it.subPaths.length === 2)
+            .map((it) => {
+                return {
+                    ...it,
+                    displayRoute: JSON.stringify(it.route),
+                    displaySubPaths: JSON.stringify(it.subPaths),
+                }
+            })
+    )
+
     const withGetAmountsOut = await Promise.all(
         withSubPaths.map(async (it) => ({
             ...it,
             getAmountsOut: await dexAggregator.getAmountsOut(
-                input.amount.mul(TEN.pow(TOKEN_DECIMALS[input.tokenIn])),
+                input.amount,
                 it.subPaths
             ),
         }))
     )
+
+    console.log("withGetAmountsOut:")
+    console.log(withGetAmountsOut)
 
     return withGetAmountsOut
         .map((it) => ({

@@ -74,13 +74,14 @@ export const routerPair = (
     }
 }
 
-export const getBestPath = async (
-    dexAggregator: Contract,
-    input: Input
-): Promise<BestPath> => {
+export const getAllPath = async (dexAggregator: Contract, input: Input) => {
+    console.log('Listing all quotes')
     const pairQuotes = await quote(dexAggregator)
+
+    console.log('Creating quote map')
     const quoteMap = quotesToQuoteMap(pairQuotes)
 
+    console.log('Finding all possible routes')
     const routes = computeAllRoutes(
         input.tokenIn,
         input.tokenOut,
@@ -90,19 +91,32 @@ export const getBestPath = async (
         []
     )
 
+    console.log('Calculating quote for routes')
     const routeWithQuote = calculateQuoteForRoutes(routes, quoteMap)
 
+    console.log('Verifying Calculated routes')
     const verifiedCalculatedRoutes = await verifyCalculatedRoutes(
         input,
         routeWithQuote,
         dexAggregator
     )
 
+    return verifiedCalculatedRoutes
+}
+
+export const getBestPath = async (
+    dexAggregator: Contract,
+    input: Input
+): Promise<BestPath> => {
+    console.log('Finding All paths')
+    const allPath = await getAllPath(dexAggregator, input)
+
+    console.log('Returning best path')
     return {
         input,
-        amountOut: verifiedCalculatedRoutes[0].getAmountsOut,
-        subPaths: verifiedCalculatedRoutes[0].subPaths,
-        route: verifiedCalculatedRoutes[0].route,
+        amountOut: allPath[0].getAmountsOut,
+        subPaths: allPath[0].subPaths,
+        route: allPath[0].route,
     }
 }
 

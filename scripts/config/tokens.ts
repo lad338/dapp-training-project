@@ -24,10 +24,10 @@ export const TOKENS = [
     TOKEN.USDT,
     TOKEN.DAI,
     TOKEN.TONIC,
-    TOKEN.SINGLE,
+    // TOKEN.SINGLE,
     TOKEN.VVS,
     TOKEN.MMF,
-    TOKEN.TUSD,
+    // TOKEN.TUSD,
     TOKEN.ATOM,
     TOKEN.ELON,
 ]

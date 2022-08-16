@@ -20,12 +20,6 @@ export type Quote = {
     amount: BigNumber
 }
 
-export type AmountOutInput = {
-    tokenIn: TOKEN
-    tokenOut: TOKEN
-    amount: BigNumber
-}
-
 export type RouterPairQuoteMap = {
     [pair: string]: BigNumber
 }

@@ -4,12 +4,14 @@
         "compile": "npx hardhat compile",
         "prettier:ts": "prettier --config .prettierrc '**/*.ts' --write",
         "fork": "npx hardhat node --fork https://evm.cronos.org/",
+        "fork:2": "npx hardhat node --fork https://mainnet.cronoslabs.com/v1/07e4abe464b52572e69ebcada24a9009",
         "fork:block": "npx hardhat node --fork https://evm.cronos.org/ --fork-block-number 4184000",
         "deploy": "npx hardhat run ./scripts/deploy.ts --network localhost",
         "out": "npx hardhat run ./scripts/amountsOut.ts --network localhost",
         "out:cronos": "npx hardhat run ./scripts/amountsOut.ts --network cronos",
         "swap": "npx hardhat run ./scripts/swap.ts --network localhost",
         "usdc": "npx hardhat run ./scripts/usdc.ts --network localhost",
+        "try": "npx hardhat run ./scripts/try.ts --network localhost",
         "p": "yarn prettier:ts"
     },
     "devDependencies": {

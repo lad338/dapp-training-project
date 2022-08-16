@@ -15,7 +15,7 @@ const multicall = new Multicall({
     multicallCustomContractAddress: DeployedMultiCall2.address,
 })
 
-export const quote = async (dexAggregator: Contract):Promise<Quote[]>  => {
+export const quote = async (dexAggregator: Contract): Promise<Quote[]> => {
     const pairs = getAllPairs()
 
     // const multicallContext = {
@@ -53,18 +53,25 @@ export const quote = async (dexAggregator: Contract):Promise<Quote[]>  => {
                     '1',
                     TOKEN_DECIMALS[pair.tokenIn]
                 )
-                const amounts: BigNumber[] = await dexAggregator.listAmountOut(
-                    quoteAmountIn,
-                    TOKEN_ADDRESSES[pair.tokenIn],
-                    TOKEN_ADDRESSES[pair.tokenOut]
-                )
+                try {
+                    const amounts: BigNumber[] =
+                        await dexAggregator.listAmountOut(
+                            quoteAmountIn,
+                            TOKEN_ADDRESSES[pair.tokenIn],
+                            TOKEN_ADDRESSES[pair.tokenOut]
+                        )
 
-                return amounts.map((amount, idx) => {
-                    return {
-                        pair: { pair, router: idx },
-                        amount,
-                    }
-                })
+                    return amounts.map((amount, idx) => {
+                        return {
+                            pair: { pair, router: idx },
+                            amount,
+                        }
+                    })
+                } catch (e) {
+                    console.log('error fetching quote')
+                    console.log(e)
+                    return []
+                }
             })
         )
     )
