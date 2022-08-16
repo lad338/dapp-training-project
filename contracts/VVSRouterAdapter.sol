@@ -6,6 +6,8 @@ import './vvs/IVVSRouter02.sol';
 import './vvs/VVSLibrary.sol';
 import './interfaces/IERC20.sol';
 
+import 'hardhat/console.sol';
+
 contract VVSRouterAdapter is IRouterAdapter {
     IVVSRouter02 public router;
 
@@ -23,7 +25,36 @@ contract VVSRouterAdapter is IRouterAdapter {
             tokenIn,
             tokenOut
         );
-        amountOut = VVSLibrary.quote(amountIn, reserveA, reserveB);
+        console.log('VVSRouterAdapter getReserves');
+        console.log(reserveA);
+        console.log(reserveB);
+
+        amountOut = router.quote(amountIn, reserveA, reserveB);
+        console.log('VVSRouterAdapter quote');
+        console.log(amountOut);
+    }
+
+    function getAmountOut(
+        uint256 amountIn,
+        address tokenIn,
+        address tokenOut
+    ) external view override returns (uint256 amountOut) {
+        (uint256 reserveA, uint256 reserveB) = VVSLibrary.getReserves(
+            router.factory(),
+            tokenIn,
+            tokenOut
+        );
+        amountOut = router.getAmountOut(amountIn, reserveA, reserveB);
+    }
+
+    function getAmountsOut(uint256 amountIn, address[] memory path)
+        external
+        view
+        override
+        returns (uint256[] memory amounts)
+    {
+
+        amounts = router.getAmountsOut(amountIn, path);
     }
 
     function swapExactTokensForTokens(

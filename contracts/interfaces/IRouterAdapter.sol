@@ -8,17 +8,28 @@ interface IRouterAdapter {
         address tokenOut
     ) external view returns (uint256 amountOut);
 
+    function getAmountOut(
+        uint256 amountIn,
+        address tokenIn,
+        address tokenOut
+    ) external view returns (uint256 amountOut);
+
+    function getAmountsOut(uint256 amountIn, address[] memory path)
+        external
+        view
+        returns (uint256[] memory amounts);
+
     function swapExactTokensForTokens(
-        uint amountIn,
-        uint amountOutMin,
+        uint256 amountIn,
+        uint256 amountOutMin,
         address[] calldata path,
         address to
-    ) external returns (uint[] memory amounts);
+    ) external returns (uint256[] memory amounts);
 
     function swapTokensForExactTokens(
-        uint amountOut,
-        uint amountInMax,
+        uint256 amountOut,
+        uint256 amountInMax,
         address[] calldata path,
         address to
-    ) external returns (uint[] memory amounts);
+    ) external returns (uint256[] memory amounts);
 }

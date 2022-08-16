@@ -1,14 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
+import '@openzeppelin/contracts/access/Ownable.sol';
 
-import "./interfaces/IRouterAdapter.sol";
+import './interfaces/IERC20.sol';
+import './interfaces/IRouterAdapter.sol';
+
+import 'hardhat/console.sol';
 
 contract DexAggregator is Ownable {
     address[] public routers;
+    address[] public supportedTokens;
 
-    event RouterRegistered(address indexed routerAddress, uint index);
+    event RouterRegistered(address indexed routerAddress, uint256 index);
+
+    constructor(address[] memory tokens) {
+        for (uint256 i = 0; i < tokens.length; i++) {
+            supportedTokens.push(tokens[i]);
+        }
+    }
 
     function registerRouter(address routerAddress) external onlyOwner {
         routers.push(routerAddress);
@@ -21,10 +31,98 @@ contract DexAggregator is Ownable {
         address tokenOut
     ) public view returns (uint256[] memory amounts) {
         amounts = new uint256[](routers.length);
-        for (uint i = 0; i < routers.length; i++) {
+        for (uint256 i = 0; i < routers.length; i++) {
             IRouterAdapter router = IRouterAdapter(routers[i]);
-            uint amount = router.quote(amountIn, tokenIn, tokenOut);
-            amounts[i] = amount;
+            try router.quote(amountIn, tokenIn, tokenOut) returns (
+                uint256 amount
+            ) {
+                console.log('DexAggregator quote');
+                console.log(amount);
+                amounts[i] = amount;
+            } catch {
+                amounts[i] = 0;
+            }
         }
+    }
+
+    function listAmountOut(
+        uint256 amountIn,
+        address tokenIn,
+        address tokenOut
+    ) public view returns (uint256[] memory amounts) {
+        amounts = new uint256[](routers.length);
+        for (uint256 i = 0; i < routers.length; i++) {
+            IRouterAdapter router = IRouterAdapter(routers[i]);
+            try router.getAmountOut(amountIn, tokenIn, tokenOut) returns (
+                uint256 amount
+            ) {
+                console.log(amount);
+                amounts[i] = amount;
+            } catch {
+                amounts[i] = 0;
+            }
+        }
+    }
+
+    function getAmountsOut(uint256 amountIn, SubPath[] calldata subPaths)
+        public
+        view
+        returns (uint256 amount)
+    {
+        for (uint256 i = 0; i < subPaths.length; i++) {
+            IRouterAdapter router = IRouterAdapter(routers[subPaths[i].router]);
+            uint256[] memory amountsOut = router.getAmountsOut(
+                amountIn,
+                subPaths[i].path
+            );
+            amount = amountsOut[amountsOut.length - 1];
+            amountIn = amount;
+        }
+    }
+
+    function swapExactTokensForTokens(
+        uint256 amountIn,
+        uint256 amoutOutMin,
+        SubPath[] calldata subPaths,
+        address to
+    ) public {
+        uint256 amountOut;
+        for (uint256 i = 0; i < subPaths.length; i++) {
+            IRouterAdapter router = IRouterAdapter(routers[subPaths[i].router]);
+            uint256[] memory amountsOut = router.getAmountsOut(
+                amountIn,
+                subPaths[i].path
+            );
+            uint256 subPathAmountOut = amountsOut[amountsOut.length - 1];
+            require(
+                IERC20(subPaths[i].path[0]).transferFrom(
+                    msg.sender,
+                    address(router),
+                    amountIn
+                ),
+                'require IERC20 transferForm'
+            );
+            uint256[] memory swapedTokens = router.swapExactTokensForTokens(
+                amountIn,
+                subPathAmountOut,
+                subPaths[i].path,
+                to
+            );
+            amountOut = swapedTokens[swapedTokens.length - 1];
+            require(
+                amountOut >= subPathAmountOut,
+                'subPathAmountOut needs to be >= getAmountsOut()'
+            );
+            amountIn = subPathAmountOut;
+        }
+        require(
+            amountOut >= amoutOutMin,
+            'amountOut needs to be >= amountOutMin'
+        );
+    }
+
+    struct SubPath {
+        uint256 router;
+        address[] path;
     }
 }

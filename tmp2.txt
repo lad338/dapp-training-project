@@ -1,0 +1,900 @@
+yarn run v1.22.18
+$ npx hardhat run ./scripts/amountsOut.ts --network localhost
+signer address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+dexAggregatorAddress: 0x809d550fca64d94Bd9F66E60752A544199cfAC3D
+{
+  '0:(WBTC,WETH)': BigNumber { value: "124548232184364889843782820311" },
+  '1:(WBTC,WETH)': BigNumber { value: "125147227124015347953782939463" },
+  '0:(WBTC,WCRO)': BigNumber { value: "1599566588050552370124455349367586" },
+  '1:(WBTC,WCRO)': BigNumber { value: "1600110913620654828074879867915205" },
+  '0:(WBTC,USDC)': BigNumber { value: "245777927422371866816" },
+  '1:(WBTC,USDC)': BigNumber { value: "248249660164589894284" },
+  '0:(WBTC,USDT)': BigNumber { value: "249383910134632857024" },
+  '1:(WBTC,USDT)': BigNumber { value: "219005810882197569994" },
+  '0:(WBTC,DAI)': BigNumber { value: "237562523794287963521686538793848" },
+  '1:(WBTC,DAI)': BigNumber { value: "232937031197418743243243243243243" },
+  '0:(WBTC,TONIC)': BigNumber { value: "1318124693592703337344113434727503168567" },
+  '1:(WBTC,SINGLE)': BigNumber { value: "9599336294584812000000000000000000" },
+  '0:(WBTC,VVS)': BigNumber { value: "30216018096135336920942295108577109784" },
+  '0:(WBTC,ATOM)': BigNumber { value: "22873633879781420765" },
+  '0:(WETH,WBTC)': BigNumber { value: "8029018" },
+  '1:(WETH,WBTC)': BigNumber { value: "7990588" },
+  '0:(WETH,WCRO)': BigNumber { value: "12792489475676823687583" },
+  '1:(WETH,WCRO)': BigNumber { value: "12777715928728638573592" },
+  '0:(WETH,USDC)': BigNumber { value: "1982091966" },
+  '1:(WETH,USDC)': BigNumber { value: "2010091456" },
+  '0:(WETH,USDT)': BigNumber { value: "1983911252" },
+  '1:(WETH,USDT)': BigNumber { value: "1559451127" },
+  '0:(WETH,DAI)': BigNumber { value: "1908621187246823193989" },
+  '1:(WETH,DAI)': BigNumber { value: "2578450000000000000000" },
+  '0:(WETH,TONIC)': BigNumber { value: "11398783958245172128027680073" },
+  '0:(WETH,SINGLE)': BigNumber { value: "193930412952034885088324" },
+  '1:(WETH,SINGLE)': BigNumber { value: "272460001818884820713971" },
+  '0:(WETH,VVS)': BigNumber { value: "240853757660852367506333517" },
+  '1:(WETH,MMF)': BigNumber { value: "24595865567646107624663" },
+  '0:(WETH,ATOM)': BigNumber { value: "196954274" },
+  '0:(WETH,ELON)': BigNumber { value: "4248828586324721967595354039" },
+  '0:(WCRO,WBTC)': BigNumber { value: "625" },
+  '1:(WCRO,WBTC)': BigNumber { value: "624" },
+  '0:(WCRO,WETH)': BigNumber { value: "78170867515768" },
+  '1:(WCRO,WETH)': BigNumber { value: "78261248377862" },
+  '0:(WCRO,USDC)': BigNumber { value: "154899" },
+  '1:(WCRO,USDC)': BigNumber { value: "154862" },
+  '0:(WCRO,USDT)': BigNumber { value: "155383" },
+  '1:(WCRO,USDT)': BigNumber { value: "155005" },
+  '0:(WCRO,DAI)': BigNumber { value: "155480776504950403" },
+  '1:(WCRO,DAI)': BigNumber { value: "155962824403974483" },
+  '0:(WCRO,TONIC)': BigNumber { value: "837800142604448350922224" },
+  '1:(WCRO,TONIC)': BigNumber { value: "758033282379903722570599" },
+  '0:(WCRO,SINGLE)': BigNumber { value: "16205841686055619804" },
+  '1:(WCRO,SINGLE)': BigNumber { value: "11100390833151946148" },
+  '0:(WCRO,VVS)': BigNumber { value: "18875363228670362985232" },
+  '1:(WCRO,VVS)': BigNumber { value: "460292393998375979271801" },
+  '1:(WCRO,MMF)': BigNumber { value: "3298988695513798944" },
+  '0:(WCRO,TUSD)': BigNumber { value: "179475181738570382" },
+  '0:(WCRO,ATOM)': BigNumber { value: "13049" },
+  '0:(WCRO,ELON)': BigNumber { value: "388471919538004701894120" },
+  '0:(USDC,WBTC)': BigNumber { value: "4068713616750009" },
+  '1:(USDC,WBTC)': BigNumber { value: "4028202895975762" },
+  '0:(USDC,WETH)': BigNumber { value: "504517457689266903209045600" },
+  '1:(USDC,WETH)': BigNumber { value: "497489801741321845182733148" },
+  '0:(USDC,WCRO)': BigNumber { value: "6455807784995117370637417243785" },
+  '1:(USDC,WCRO)': BigNumber { value: "6457327544500049295656913313324" },
+  '0:(USDC,USDT)': BigNumber { value: "1001369282167466438" },
+  '1:(USDC,USDT)': BigNumber { value: "999470824821539941" },
+  '0:(USDC,DAI)': BigNumber { value: "993997455157643701597609900345" },
+  '1:(USDC,DAI)': BigNumber { value: "1003649085645773521752301189417" },
+  '0:(USDC,TONIC)': BigNumber { value: "5413557808431206451509178385715675798" },
+  '0:(USDC,SINGLE)': BigNumber { value: "106264131090818565867689873214193" },
+  '1:(USDC,SINGLE)': BigNumber { value: "106267810269034374607368960394679" },
+  '0:(USDC,VVS)': BigNumber { value: "121647980451272224111736965373741320" },
+  '1:(USDC,MMF)': BigNumber { value: "21264311231514249209321381256358" },
+  '0:(USDC,TUSD)': BigNumber { value: "1002877439713324435455879128433" },
+  '0:(USDC,ATOM)': BigNumber { value: "84726637795926218" },
+  '0:(USDC,ELON)': BigNumber { value: "2367639547770268190079087218401366893" },
+  '0:(USDT,WBTC)': BigNumber { value: "4009881790128874" },
+  '1:(USDT,WBTC)': BigNumber { value: "4566088890389745" },
+  '0:(USDT,WETH)': BigNumber { value: "504054805141526263802157827" },
+  '1:(USDT,WETH)': BigNumber { value: "641251259596078186473490289" },
+  '0:(USDT,WCRO)': BigNumber { value: "6435697326011854817187895266185" },
+  '1:(USDT,WCRO)': BigNumber { value: "6451395113553729080319086184833" },
+  '0:(USDT,USDC)': BigNumber { value: "998632590202385054" },
+  '1:(USDT,USDC)': BigNumber { value: "1000529455353091017" },
+  '0:(USDT,DAI)': BigNumber { value: "986484947625766405178394925771" },
+  '1:(USDT,DAI)': BigNumber { value: "1005282873959156424972004479283" },
+  '0:(USDT,TONIC)': BigNumber { value: "5353798248900636046014496774072494301" },
+  '0:(USDT,SINGLE)': BigNumber { value: "103889558353119523571544903560447" },
+  '1:(USDT,SINGLE)': BigNumber { value: "47658392698418275146497500134401" },
+  '0:(USDT,VVS)': BigNumber { value: "121641952642966595734555964214269933" },
+  '1:(USDT,MMF)': BigNumber { value: "21368519560031548887010108654916" },
+  '0:(USDT,TUSD)': BigNumber { value: "800884891000616384396182402088" },
+  '0:(USDT,ATOM)': BigNumber { value: "85281861734895603" },
+  '0:(USDT,ELON)': BigNumber { value: "2138718541058532582304316861880773398" },
+  '0:(DAI,WBTC)': BigNumber { value: "4209" },
+  '1:(DAI,WBTC)': BigNumber { value: "4293" },
+  '0:(DAI,WETH)': BigNumber { value: "523938436124402" },
+  '1:(DAI,WETH)': BigNumber { value: "387829897806821" },
+  '0:(DAI,WCRO)': BigNumber { value: "6431663273614797471" },
+  '1:(DAI,WCRO)': BigNumber { value: "6411784371189654255" },
+  '0:(DAI,USDC)': BigNumber { value: "1006038" },
+  '1:(DAI,USDC)': BigNumber { value: "996364" },
+  '0:(DAI,USDT)': BigNumber { value: "1013700" },
+  '1:(DAI,USDT)': BigNumber { value: "994744" },
+  '0:(DAI,TONIC)': BigNumber { value: "5763562459391353104877621" },
+  '0:(DAI,SINGLE)': BigNumber { value: "2673707128249566325716410" },
+  '0:(DAI,VVS)': BigNumber { value: "125992920520496782932991" },
+  '1:(DAI,MMF)': BigNumber { value: "17667862985127064489" },
+  '0:(DAI,TUSD)': BigNumber { value: "885350318471337579" },
+  '0:(DAI,ATOM)': BigNumber { value: "106608" },
+  '0:(DAI,ELON)': BigNumber { value: "2966201727142861150138248" },
+  '0:(TONIC,WETH)': BigNumber { value: "87728656" },
+  '0:(TONIC,WCRO)': BigNumber { value: "1193602088549" },
+  '1:(TONIC,WCRO)': BigNumber { value: "1319203289940" },
+  '0:(TONIC,DAI)': BigNumber { value: "173503802040" },
+  '0:(TONIC,SINGLE)': BigNumber { value: "19602891043628" },
+  '0:(TONIC,VVS)': BigNumber { value: "22559451246205421" },
+  '0:(TONIC,TUSD)': BigNumber { value: "123795198476" },
+  '0:(TONIC,ELON)': BigNumber { value: "457404005163739042" },
+  '1:(SINGLE,WBTC)': BigNumber { value: "104" },
+  '0:(SINGLE,WETH)': BigNumber { value: "5156488787796" },
+  '1:(SINGLE,WETH)': BigNumber { value: "3670263500419" },
+  '0:(SINGLE,WCRO)': BigNumber { value: "61706143955512901" },
+  '1:(SINGLE,WCRO)': BigNumber { value: "90086918112238295" },
+  '0:(SINGLE,USDC)': BigNumber { value: "9410" },
+  '1:(SINGLE,USDC)': BigNumber { value: "9410" },
+  '0:(SINGLE,USDT)': BigNumber { value: "9625" },
+  '1:(SINGLE,USDT)': BigNumber { value: "20982" },
+  '0:(SINGLE,DAI)': BigNumber { value: "374012542149" },
+  '0:(SINGLE,TONIC)': BigNumber { value: "51012883649374183611714" },
+  '0:(SINGLE,VVS)': BigNumber { value: "1144391334571143127564" },
+  '1:(SINGLE,MMF)': BigNumber { value: "156668557861644893" },
+  '0:(SINGLE,TUSD)': BigNumber { value: "11022239055747633" },
+  '0:(SINGLE,ATOM)': BigNumber { value: "897" },
+  '0:(SINGLE,ELON)': BigNumber { value: "20541195785168451992064" },
+  '0:(VVS,WETH)': BigNumber { value: "4151897025" },
+  '0:(VVS,WCRO)': BigNumber { value: "52979112925417" },
+  '1:(VVS,WCRO)': BigNumber { value: "2172532097072" },
+  '0:(VVS,USDC)': BigNumber { value: "8" },
+  '0:(VVS,USDT)': BigNumber { value: "8" },
+  '0:(VVS,DAI)': BigNumber { value: "7936953884939" },
+  '0:(VVS,TONIC)': BigNumber { value: "44327319361024061975" },
+  '0:(VVS,SINGLE)': BigNumber { value: "873826959179786" },
+  '1:(VVS,MMF)': BigNumber { value: "83968542833636" },
+  '0:(VVS,TUSD)': BigNumber { value: "8161803071319" },
+  '0:(VVS,ELON)': BigNumber { value: "20376769001820627025" },
+  '1:(MMF,WETH)': BigNumber { value: "40657239618166" },
+  '1:(MMF,WCRO)': BigNumber { value: "303123196923915382" },
+  '1:(MMF,USDC)': BigNumber { value: "47027" },
+  '1:(MMF,USDT)': BigNumber { value: "46797" },
+  '1:(MMF,DAI)': BigNumber { value: "56599940855428144" },
+  '1:(MMF,SINGLE)': BigNumber { value: "6382901672479215919" },
+  '1:(MMF,VVS)': BigNumber { value: "11909221790132269881930" },
+  '0:(TUSD,WCRO)': BigNumber { value: "5571801016235402454" },
+  '0:(TUSD,USDC)': BigNumber { value: "997130" },
+  '0:(TUSD,USDT)': BigNumber { value: "1248618" },
+  '0:(TUSD,DAI)': BigNumber { value: "1129496402877697841" },
+  '0:(TUSD,TONIC)': BigNumber { value: "8077857722350453797043721" },
+  '0:(TUSD,SINGLE)': BigNumber { value: "90725667892182224786" },
+  '0:(TUSD,VVS)': BigNumber { value: "122521946592164546968142" },
+  '0:(TUSD,ELON)': BigNumber { value: "3145385470918084550053866" },
+  '0:(ATOM,WBTC)': BigNumber { value: "43718457909039328" },
+  '0:(ATOM,WETH)': BigNumber { value: "5077320626757759107665884089" },
+  '0:(ATOM,WCRO)': BigNumber { value: "76629862647299432584276734855381" },
+  '0:(ATOM,USDC)': BigNumber { value: "11802663554390228304" },
+  '0:(ATOM,USDT)': BigNumber { value: "11725822814569494115" },
+  '0:(ATOM,DAI)': BigNumber { value: "9380082373556951697255294511861" },
+  '0:(ATOM,TONIC)': BigNumber { value: "63377888183906000453380562262789543039" },
+  '0:(ATOM,SINGLE)': BigNumber { value: "1114110502025004005982077514426284" },
+  '0:(ATOM,VVS)': BigNumber { value: "1451326406510618524511260276890268834" },
+  '0:(ATOM,ELON)': BigNumber { value: "25427411901756523026132367249302689619" },
+  '0:(ELON,WETH)': BigNumber { value: "235358988" },
+  '0:(ELON,WCRO)': BigNumber { value: "2574188634249" },
+  '0:(ELON,DAI)': BigNumber { value: "337131487332" },
+  '0:(ELON,TONIC)': BigNumber { value: "2186251079375715874" },
+  '0:(ELON,SINGLE)': BigNumber { value: "48682657546258" },
+  '0:(ELON,VVS)': BigNumber { value: "49075493760107494" },
+  '0:(ELON,TUSD)': BigNumber { value: "317926056836" }
+}
+[
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "2215" }, decimal: 8 },
+    amount: BigNumber { value: "22150000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "1712" }, decimal: 8 },
+    amount: BigNumber { value: "17120000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "1712" }, decimal: 8 },
+    amount: BigNumber { value: "17120000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "1685" }, decimal: 8 },
+    amount: BigNumber { value: "16850000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "1676" }, decimal: 8 },
+    amount: BigNumber { value: "16760000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "1576" }, decimal: 8 },
+    amount: BigNumber { value: "15760000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "1154" }, decimal: 8 },
+    amount: BigNumber { value: "11540000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "865" }, decimal: 8 },
+    amount: BigNumber { value: "8650000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "848" }, decimal: 8 },
+    amount: BigNumber { value: "8480000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "769" }, decimal: 8 },
+    amount: BigNumber { value: "7690000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "709492590055429" }, decimal: 20 },
+    amount: BigNumber { value: "7094925900554290000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "708443110816660" }, decimal: 20 },
+    amount: BigNumber { value: "7084431108166600000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "708127329477203" }, decimal: 20 },
+    amount: BigNumber { value: "7081273294772030000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "707766608454862" }, decimal: 20 },
+    amount: BigNumber { value: "7077666084548620000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "707100000885238" }, decimal: 20 },
+    amount: BigNumber { value: "7071000008852380000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "673089377967569" }, decimal: 20 },
+    amount: BigNumber { value: "6730893779675690000000000000000" }
+  },
+  {
+    route: '1:(WCRO,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "669" }, decimal: 8 },
+    amount: BigNumber { value: "6690000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "669" }, decimal: 8 },
+    amount: BigNumber { value: "6690000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "667" }, decimal: 8 },
+    amount: BigNumber { value: "6670000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "667" }, decimal: 8 },
+    amount: BigNumber { value: "6670000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "661" }, decimal: 8 },
+    amount: BigNumber { value: "6610000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "657" }, decimal: 8 },
+    amount: BigNumber { value: "6570000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "656" }, decimal: 8 },
+    amount: BigNumber { value: "6560000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "656" }, decimal: 8 },
+    amount: BigNumber { value: "6560000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "654" }, decimal: 8 },
+    amount: BigNumber { value: "6540000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "654" }, decimal: 8 },
+    amount: BigNumber { value: "6540000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "648" }, decimal: 8 },
+    amount: BigNumber { value: "6480000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "644" }, decimal: 8 },
+    amount: BigNumber { value: "6440000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "640" }, decimal: 8 },
+    amount: BigNumber { value: "6400000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "639316970599928" }, decimal: 20 },
+    amount: BigNumber { value: "6393169705999280000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "632951521044671" }, decimal: 20 },
+    amount: BigNumber { value: "6329515210446710000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "630410556492863" }, decimal: 20 },
+    amount: BigNumber { value: "6304105564928630000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "630239670520959" }, decimal: 20 },
+    amount: BigNumber { value: "6302396705209590000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "630089128117139" }, decimal: 20 },
+    amount: BigNumber { value: "6300891281171390000000000000000" }
+  },
+  {
+    route: '1:(WCRO,WETH), 0:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "628" }, decimal: 8 },
+    amount: BigNumber { value: "6280000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "627" }, decimal: 8 },
+    amount: BigNumber { value: "6270000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "627" }, decimal: 8 },
+    amount: BigNumber { value: "6270000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,WETH), 1:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "625" }, decimal: 8 },
+    amount: BigNumber { value: "6250000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WBTC)',
+    quote: { quote: BigNumber { value: "625" }, decimal: 8 },
+    amount: BigNumber { value: "6250000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "624133784905380" }, decimal: 20 },
+    amount: BigNumber { value: "6241337849053800000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "624" }, decimal: 8 },
+    amount: BigNumber { value: "6240000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,WBTC)',
+    quote: { quote: BigNumber { value: "624" }, decimal: 8 },
+    amount: BigNumber { value: "6240000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "623964600383749" }, decimal: 20 },
+    amount: BigNumber { value: "6239646003837490000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "623815556876598" }, decimal: 20 },
+    amount: BigNumber { value: "6238155568765980000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "623067462195594" }, decimal: 20 },
+    amount: BigNumber { value: "6230674621955940000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "622145822737914" }, decimal: 20 },
+    amount: BigNumber { value: "6221458227379140000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "621868507540346" }, decimal: 20 },
+    amount: BigNumber { value: "6218685075403460000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "621551726878926" }, decimal: 20 },
+    amount: BigNumber { value: "6215517268789260000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "620966320501878" }, decimal: 20 },
+    amount: BigNumber { value: "6209663205018780000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "578471712602518" }, decimal: 20 },
+    amount: BigNumber { value: "5784717126025180000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "573919739020674" }, decimal: 20 },
+    amount: BigNumber { value: "5739197390206740000000000000000" }
+  },
+  {
+    route: '0:(WCRO,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "570482157255054" }, decimal: 20 },
+    amount: BigNumber { value: "5704821572550540000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "556619934005181" }, decimal: 20 },
+    amount: BigNumber { value: "5566199340051810000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "488816619862080" }, decimal: 20 },
+    amount: BigNumber { value: "4888166198620800000000000000000" }
+  }
+]
+Done in 8.97s.
+yarn run v1.22.18
+$ npx hardhat run ./scripts/amountsOut.ts --network localhost
+signer address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+dexAggregatorAddress: 0x809d550fca64d94Bd9F66E60752A544199cfAC3D
+{
+  '0:(WBTC,WETH)': BigNumber { value: "83012393136681179" },
+  '1:(WBTC,WETH)': BigNumber { value: "97270632648106682460" },
+  '0:(WBTC,WCRO)': BigNumber { value: "297397960197005887659079660" },
+  '1:(WBTC,WCRO)': BigNumber { value: "3426419611064709966948206" },
+  '0:(WBTC,USDC)': BigNumber { value: "59126795" },
+  '1:(WBTC,USDC)': BigNumber { value: "1709695967988" },
+  '0:(WBTC,USDT)': BigNumber { value: "15096454" },
+  '1:(WBTC,USDT)': BigNumber { value: "414577" },
+  '0:(WBTC,DAI)': BigNumber { value: "13747743251974646473" },
+  '1:(WBTC,DAI)': BigNumber { value: "51712020925826949" },
+  '0:(WBTC,TONIC)': BigNumber { value: "12480004598935596681741826" },
+  '1:(WBTC,SINGLE)': BigNumber { value: "19198672589169623" },
+  '0:(WBTC,VVS)': BigNumber { value: "23827264093942019963462173" },
+  '0:(WBTC,ATOM)': BigNumber { value: "66973" },
+  '0:(WETH,WBTC)': BigNumber { value: "615278" },
+  '1:(WETH,WBTC)': BigNumber { value: "7895967" },
+  '0:(WETH,WCRO)': BigNumber { value: "12753652901575208853344" },
+  '1:(WETH,WCRO)': BigNumber { value: "12747864725963378597164" },
+  '0:(WETH,USDC)': BigNumber { value: "1875237944" },
+  '1:(WETH,USDC)': BigNumber { value: "31609521" },
+  '0:(WETH,USDT)': BigNumber { value: "21312583" },
+  '1:(WETH,USDT)': BigNumber { value: "16012" },
+  '0:(WETH,DAI)': BigNumber { value: "2807794350697493229" },
+  '1:(WETH,DAI)': BigNumber { value: "51568" },
+  '0:(WETH,TONIC)': BigNumber { value: "116099072599303863441009205" },
+  '0:(WETH,SINGLE)': BigNumber { value: "4642534347954296712" },
+  '1:(WETH,SINGLE)': BigNumber { value: "3004121922026246" },
+  '0:(WETH,VVS)': BigNumber { value: "10848993220474952462330484" },
+  '1:(WETH,MMF)': BigNumber { value: "4842565175485737871" },
+  '0:(WETH,ATOM)': BigNumber { value: "305776" },
+  '0:(WETH,ELON)': BigNumber { value: "61400005884428518551441507" },
+  '0:(WCRO,WBTC)': BigNumber { value: "623" },
+  '1:(WCRO,WBTC)': BigNumber { value: "623" },
+  '0:(WCRO,WETH)': BigNumber { value: "77936354693909" },
+  '1:(WCRO,WETH)': BigNumber { value: "78128200356569" },
+  '0:(WCRO,USDC)': BigNumber { value: "154434" },
+  '1:(WCRO,USDC)': BigNumber { value: "154599" },
+  '0:(WCRO,USDT)': BigNumber { value: "154917" },
+  '1:(WCRO,USDT)': BigNumber { value: "154741" },
+  '0:(WCRO,DAI)': BigNumber { value: "155014194100398965" },
+  '1:(WCRO,DAI)': BigNumber { value: "155686141790267600" },
+  '0:(WCRO,TONIC)': BigNumber { value: "835286688014793938789598" },
+  '1:(WCRO,TONIC)': BigNumber { value: "712332298136490080324439" },
+  '0:(WCRO,SINGLE)': BigNumber { value: "16150234438197680560" },
+  '1:(WCRO,SINGLE)': BigNumber { value: "9978930112270989088" },
+  '0:(WCRO,VVS)': BigNumber { value: "18818737048955576183288" },
+  '1:(WCRO,VVS)': BigNumber { value: "29457014722355386480" },
+  '1:(WCRO,MMF)': BigNumber { value: "3293380305673444203" },
+  '0:(WCRO,TUSD)': BigNumber { value: "176558757562799990" },
+  '0:(WCRO,ATOM)': BigNumber { value: "13010" },
+  '0:(WCRO,ELON)': BigNumber { value: "387306161742290369570920" },
+  '0:(USDC,WBTC)': BigNumber { value: "240569" },
+  '1:(USDC,WBTC)': BigNumber { value: "6886990502" },
+  '0:(USDC,WETH)': BigNumber { value: "18527934997101197919" },
+  '1:(USDC,WETH)': BigNumber { value: "15977088953227280" },
+  '0:(USDC,WCRO)': BigNumber { value: "124790820346205593027773614" },
+  '1:(USDC,WCRO)': BigNumber { value: "30949389941896038597942592" },
+  '0:(USDC,USDT)': BigNumber { value: "162124514386591" },
+  '1:(USDC,USDT)': BigNumber { value: "3138396177788" },
+  '0:(USDC,DAI)': BigNumber { value: "140304335147555708066" },
+  '1:(USDC,DAI)': BigNumber { value: "62888985155921834878073" },
+  '0:(USDC,TONIC)': BigNumber { value: "1502981850602182348167312602708" },
+  '0:(USDC,SINGLE)': BigNumber { value: "16169992010082660288389759" },
+  '1:(USDC,SINGLE)': BigNumber { value: "16521140138200914546601607" },
+  '0:(USDC,VVS)': BigNumber { value: "204949241049772760170650225297" },
+  '1:(USDC,MMF)': BigNumber { value: "42437323010355665208376180" },
+  '0:(USDC,TUSD)': BigNumber { value: "4372113848889952706691434" },
+  '0:(USDC,ATOM)': BigNumber { value: "62547" },
+  '0:(USDC,ELON)': BigNumber { value: "71236364361946361531235252" },
+  '0:(USDT,WBTC)': BigNumber { value: "60534" },
+  '1:(USDT,WBTC)': BigNumber { value: "1892" },
+  '0:(USDT,WETH)': BigNumber { value: "10859724177687316" },
+  '1:(USDT,WETH)': BigNumber { value: "10268356419911" },
+  '0:(USDT,WCRO)': BigNumber { value: "8444391641523287872669661" },
+  '1:(USDT,WCRO)': BigNumber { value: "8071747769706752668430974" },
+  '0:(USDT,USDC)': BigNumber { value: "161902787736850" },
+  '1:(USDT,USDC)': BigNumber { value: "3140057823671" },
+  '0:(USDT,DAI)': BigNumber { value: "14023553353579753149" },
+  '1:(USDT,DAI)': BigNumber { value: "14363481703128221" },
+  '0:(USDT,TONIC)': BigNumber { value: "2372252273574315646430250619" },
+  '0:(USDT,SINGLE)': BigNumber { value: "13768166511334926577534" },
+  '1:(USDT,SINGLE)': BigNumber { value: "886493762583261818" },
+  '0:(USDT,VVS)': BigNumber { value: "134613421383058739449585884197" },
+  '1:(USDT,MMF)': BigNumber { value: "3215567415081515139841068" },
+  '0:(USDT,TUSD)': BigNumber { value: "619712715382430981" },
+  '0:(USDT,ATOM)': BigNumber { value: "14087681" },
+  '0:(USDT,ELON)': BigNumber { value: "43061059624574322558180604" },
+  '0:(DAI,WBTC)': BigNumber { value: "3913" },
+  '1:(DAI,WBTC)': BigNumber { value: "211" },
+  '0:(DAI,WETH)': BigNumber { value: "385635917494037" },
+  '1:(DAI,WETH)': BigNumber { value: "19" },
+  '0:(DAI,WCRO)': BigNumber { value: "6412331016444117827" },
+  '1:(DAI,WCRO)': BigNumber { value: "6397842143357516393" },
+  '0:(DAI,USDC)': BigNumber { value: "995943" },
+  '1:(DAI,USDC)': BigNumber { value: "994654" },
+  '0:(DAI,USDT)': BigNumber { value: "943575" },
+  '1:(DAI,USDT)': BigNumber { value: "14085" },
+  '0:(DAI,TONIC)': BigNumber { value: "5266907011041927538259485" },
+  '0:(DAI,SINGLE)': BigNumber { value: "942507869321549371" },
+  '0:(DAI,VVS)': BigNumber { value: "124594242037940995198024" },
+  '1:(DAI,MMF)': BigNumber { value: "8888347395657853530" },
+  '0:(DAI,TUSD)': BigNumber { value: "138978114780320" },
+  '0:(DAI,ATOM)': BigNumber { value: "73260" },
+  '0:(DAI,ELON)': BigNumber { value: "2614699579337050211337577" },
+  '0:(TONIC,WETH)': BigNumber { value: "87465469" },
+  '0:(TONIC,WCRO)': BigNumber { value: "1190021282284" },
+  '1:(TONIC,WCRO)': BigNumber { value: "1316960536028" },
+  '0:(TONIC,DAI)': BigNumber { value: "172983287902" },
+  '0:(TONIC,SINGLE)': BigNumber { value: "19544082352287" },
+  '0:(TONIC,VVS)': BigNumber { value: "22491772892458843" },
+  '0:(TONIC,TUSD)': BigNumber { value: "123423707359" },
+  '0:(TONIC,ELON)': BigNumber { value: "456031793028632987" },
+  '1:(SINGLE,WBTC)': BigNumber { value: "1" },
+  '0:(SINGLE,WETH)': BigNumber { value: "4232168584368" },
+  '1:(SINGLE,WETH)': BigNumber { value: "10992839097" },
+  '0:(SINGLE,WCRO)': BigNumber { value: "61519382584423343" },
+  '1:(SINGLE,WCRO)': BigNumber { value: "89047404358641792" },
+  '0:(SINGLE,USDC)': BigNumber { value: "9382" },
+  '1:(SINGLE,USDC)': BigNumber { value: "9394" },
+  '0:(SINGLE,USDT)': BigNumber { value: "9596" },
+  '1:(SINGLE,USDT)': BigNumber { value: "9852" },
+  '0:(SINGLE,DAI)': BigNumber { value: "181206946537" },
+  '0:(SINGLE,TONIC)': BigNumber { value: "50857427657210096981499" },
+  '0:(SINGLE,VVS)': BigNumber { value: "1140957948306170613340" },
+  '1:(SINGLE,MMF)': BigNumber { value: "155331826840043356" },
+  '0:(SINGLE,TUSD)': BigNumber { value: "10966640229649123" },
+  '0:(SINGLE,ATOM)': BigNumber { value: "894" },
+  '0:(SINGLE,ELON)': BigNumber { value: "20462917189765819545886" },
+  '0:(VVS,WETH)': BigNumber { value: "4139440971" },
+  '0:(VVS,WCRO)': BigNumber { value: "52820175586627" },
+  '1:(VVS,WCRO)': BigNumber { value: "2097750460700" },
+  '0:(VVS,USDC)': BigNumber { value: "8" },
+  '0:(VVS,USDT)': BigNumber { value: "8" },
+  '0:(VVS,DAI)': BigNumber { value: "7913142508763" },
+  '0:(VVS,TONIC)': BigNumber { value: "44194337402247505411" },
+  '0:(VVS,SINGLE)': BigNumber { value: "871205478160620" },
+  '1:(VVS,MMF)': BigNumber { value: "83803895370350" },
+  '0:(VVS,TUSD)': BigNumber { value: "8137316171338" },
+  '0:(VVS,ELON)': BigNumber { value: "20315638663831138922" },
+  '1:(MMF,WETH)': BigNumber { value: "33652078473979" },
+  '1:(MMF,WCRO)': BigNumber { value: "302607884451653848" },
+  '1:(MMF,USDC)': BigNumber { value: "46947" },
+  '1:(MMF,USDT)': BigNumber { value: "46718" },
+  '1:(MMF,DAI)': BigNumber { value: "53521723290335446" },
+  '1:(MMF,SINGLE)': BigNumber { value: "6103586368708937602" },
+  '1:(MMF,VVS)': BigNumber { value: "2891074574916228892309" },
+  '0:(TUSD,WCRO)': BigNumber { value: "5167308373896344858" },
+  '0:(TUSD,USDC)': BigNumber { value: "994139" },
+  '0:(TUSD,USDT)': BigNumber { value: "477180" },
+  '0:(TUSD,DAI)': BigNumber { value: "156978114385256" },
+  '0:(TUSD,TONIC)': BigNumber { value: "1018651233591152619996187" },
+  '0:(TUSD,SINGLE)': BigNumber { value: "76241639797703063659" },
+  '0:(TUSD,VVS)': BigNumber { value: "119472675202938727503550" },
+  '0:(TUSD,ELON)': BigNumber { value: "1875038096812685460729929" },
+  '0:(ATOM,WBTC)': BigNumber { value: "2927" },
+  '0:(ATOM,WETH)': BigNumber { value: "1554944673905966" },
+  '0:(ATOM,WCRO)': BigNumber { value: "15504342524420469226364793" },
+  '0:(ATOM,USDC)': BigNumber { value: "738232" },
+  '0:(ATOM,USDT)': BigNumber { value: "165189662" },
+  '0:(ATOM,DAI)': BigNumber { value: "2211476360636384649" },
+  '0:(ATOM,TONIC)': BigNumber { value: "91525846285003415681328066" },
+  '0:(ATOM,SINGLE)': BigNumber { value: "1032149848832073465276" },
+  '0:(ATOM,VVS)': BigNumber { value: "30908625629431982823334610" },
+  '0:(ATOM,ELON)': BigNumber { value: "91809713629451814631082675" },
+  '0:(ELON,WETH)': BigNumber { value: "234652908" },
+  '0:(ELON,WCRO)': BigNumber { value: "2566466068341" },
+  '0:(ELON,DAI)': BigNumber { value: "336120078022" },
+  '0:(ELON,TONIC)': BigNumber { value: "2179692324887660233" },
+  '0:(ELON,SINGLE)': BigNumber { value: "48536607650434" },
+  '0:(ELON,VVS)': BigNumber { value: "48928267275165057" },
+  '0:(ELON,TUSD)': BigNumber { value: "316972210898" }
+}
+[
+  {
+    route: '1:(WCRO,WBTC)',
+    quote: { quote: BigNumber { value: "623" }, decimal: 8 },
+    amount: BigNumber { value: "6230000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WBTC)',
+    quote: { quote: BigNumber { value: "623" }, decimal: 8 },
+    amount: BigNumber { value: "6230000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,WETH), 1:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "616" }, decimal: 8 },
+    amount: BigNumber { value: "6160000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "615" }, decimal: 8 },
+    amount: BigNumber { value: "6150000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "609" }, decimal: 8 },
+    amount: BigNumber { value: "6090000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "606" }, decimal: 8 },
+    amount: BigNumber { value: "6060000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,WETH), 0:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "48" }, decimal: 8 },
+    amount: BigNumber { value: "480000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,WBTC)',
+    quote: { quote: BigNumber { value: "47" }, decimal: 8 },
+    amount: BigNumber { value: "470000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "32" }, decimal: 8 },
+    amount: BigNumber { value: "320000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "32" }, decimal: 8 },
+    amount: BigNumber { value: "320000000000000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "16" }, decimal: 8 },
+    amount: BigNumber { value: "160000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "9" }, decimal: 8 },
+    amount: BigNumber { value: "90000000000000000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "1064721844" }, decimal: 20 },
+    amount: BigNumber { value: "10647218440000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "1063585491" }, decimal: 20 },
+    amount: BigNumber { value: "10635854910000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "1006526774" }, decimal: 20 },
+    amount: BigNumber { value: "10065267740000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDC), 1:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "16962657" }, decimal: 20 },
+    amount: BigNumber { value: "169626570000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "37191" }, decimal: 20 },
+    amount: BigNumber { value: "371910000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "37152" }, decimal: 20 },
+    amount: BigNumber { value: "371520000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "35158" }, decimal: 20 },
+    amount: BigNumber { value: "351580000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "9377" }, decimal: 20 },
+    amount: BigNumber { value: "93770000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "9367" }, decimal: 20 },
+    amount: BigNumber { value: "93670000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDC), 0:(USDC,WBTC)',
+    quote: { quote: BigNumber { value: "592" }, decimal: 20 },
+    amount: BigNumber { value: "5920000000000000000" }
+  },
+  {
+    route: '0:(WCRO,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "293" }, decimal: 20 },
+    amount: BigNumber { value: "2930000000000000000" }
+  },
+  {
+    route: '1:(WCRO,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "292" }, decimal: 20 },
+    amount: BigNumber { value: "2920000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "100" }, decimal: 20 },
+    amount: BigNumber { value: "1000000000000000000" }
+  },
+  {
+    route: '0:(WCRO,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "38" }, decimal: 20 },
+    amount: BigNumber { value: "380000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "3" }, decimal: 20 },
+    amount: BigNumber { value: "30000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "1" }, decimal: 20 },
+    amount: BigNumber { value: "10000000000000000" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 1:(WETH,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 1:(USDC,USDT), 0:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,ATOM), 0:(ATOM,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,SINGLE), 1:(SINGLE,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,DAI), 1:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 0:(USDT,DAI), 0:(DAI,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 8 },
+    amount: BigNumber { value: "0" }
+  },
+  {
+    route: '0:(WCRO,WETH), 0:(WETH,USDC), 0:(USDC,USDT), 1:(USDT,WBTC)',
+    quote: { quote: BigNumber { value: "0" }, decimal: 20 },
+    amount: BigNumber { value: "0" }
+  }
+]
+Done in 8.35s.
