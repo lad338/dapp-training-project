@@ -25,13 +25,8 @@ contract VVSRouterAdapter is IRouterAdapter {
             tokenIn,
             tokenOut
         );
-        console.log('VVSRouterAdapter getReserves');
-        console.log(reserveA);
-        console.log(reserveB);
 
         amountOut = router.quote(amountIn, reserveA, reserveB);
-        console.log('VVSRouterAdapter quote');
-        console.log(amountOut);
     }
 
     function getAmountOut(

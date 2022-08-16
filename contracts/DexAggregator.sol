@@ -36,8 +36,6 @@ contract DexAggregator is Ownable {
             try router.quote(amountIn, tokenIn, tokenOut) returns (
                 uint256 amount
             ) {
-                console.log('DexAggregator quote');
-                console.log(amount);
                 amounts[i] = amount;
             } catch {
                 amounts[i] = 0;
@@ -56,7 +54,6 @@ contract DexAggregator is Ownable {
             try router.getAmountOut(amountIn, tokenIn, tokenOut) returns (
                 uint256 amount
             ) {
-                console.log(amount);
                 amounts[i] = amount;
             } catch {
                 amounts[i] = 0;

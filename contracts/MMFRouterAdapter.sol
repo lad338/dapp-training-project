@@ -26,13 +26,7 @@ contract MMFRouterAdapter is IRouterAdapter {
             tokenOut
         );
 
-        console.log('MMFRouterAdapter getReserves');
-        console.log(reserveA);
-        console.log(reserveB);
-
         amountOut = router.quote(amountIn, reserveA, reserveB);
-        console.log('MMFRouterAdapter quote');
-        console.log(amountOut);
     }
 
     function getAmountOut(

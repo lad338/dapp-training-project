@@ -1,4 +1,4 @@
-import { BigNumber } from 'ethers'
+import { BigNumber, Contract } from 'ethers'
 import { ethers } from 'hardhat'
 import {
     getPairPriceDecimal,
@@ -16,11 +16,16 @@ import {
     RouteQuote,
     Path,
     SubPath,
+    RouteWithCalculatedQuote,
+    Input,
 } from '../types'
-import { routerPairToString } from './util'
-
-const ONE = BigNumber.from('1')
-const TEN = BigNumber.from('10')
+import {
+    bigNumberSorter,
+    routerPairToString,
+    ONE,
+    TEN,
+    toComparableValue,
+} from './util'
 
 export const computeAllRoutes = (
     tokenIn: TOKEN,
@@ -107,4 +112,55 @@ export const routeToSubPath = (route: Route): SubPath[] => {
         path,
     })
     return result
+}
+
+export const calculateQuoteForRoutes = (
+    routes: Route[],
+    quoteMap: RouterPairQuoteMap
+): RouteWithCalculatedQuote[] => {
+    return routes
+        .map((route) => {
+            const calculatedQuote = calculateRouteQuote(route, quoteMap)
+            return {
+                route,
+                calculatedQuote,
+                comparableCalculatedQuote: toComparableValue(
+                    calculatedQuote.quote,
+                    calculatedQuote.decimal
+                ),
+            }
+        })
+        .filter((it) => !it.comparableCalculatedQuote.isZero())
+}
+
+export const verifyCalculatedRoutes = async (
+    input: Input,
+    routes: RouteWithCalculatedQuote[],
+    dexAggregator: Contract
+) => {
+    const withSubPaths = routes.map((it) => ({
+        ...it,
+        subPaths: routeToSubPath(it.route),
+    }))
+
+    const withGetAmountsOut = await Promise.all(
+        withSubPaths.map(async (it) => ({
+            ...it,
+            getAmountsOut: await dexAggregator.getAmountsOut(
+                input.amount.mul(TEN.pow(TOKEN_DECIMALS[input.tokenIn])),
+                it.subPaths
+            ),
+        }))
+    )
+
+    return withGetAmountsOut
+        .map((it) => ({
+            ...it,
+            amount: toComparableValue(
+                it.getAmountsOut,
+                TOKEN_DECIMALS[input.tokenIn]
+            ),
+        }))
+        .sort((a, b) => bigNumberSorter(a.amount, b.amount))
+        .reverse()
 }

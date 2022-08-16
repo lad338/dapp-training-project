@@ -1,5 +1,6 @@
-import { isAddress } from 'ethers/lib/utils'
+import DexAggregator from '../../artifacts/contracts/DexAggregator.sol/DexAggregator.json'
 
 export const DeployedDexAggregator = {
-    address: '0x82e01223d51Eb87e16A03E24687EDF0F294da6f1',
+    abi: DexAggregator.abi,
+    address: '0x68B1D87F95878fE05B998F19b66F4baba5De1aed',
 }

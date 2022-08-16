@@ -43,5 +43,18 @@ export type SubPath = {
 export type Input = {
     tokenIn: TOKEN
     tokenOut: TOKEN
-    amount: number
+    amount: BigNumber
+}
+
+export type RouteWithCalculatedQuote = {
+    route: Route
+    calculatedQuote: RouteQuote
+    comparableCalculatedQuote: BigNumber
+}
+
+export type BestPath = {
+    route: Route
+    subPaths: SubPath[]
+    amountOut: BigNumber
+    input: Input
 }

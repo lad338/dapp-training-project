@@ -11,6 +11,7 @@ Setup:
 
 Init:
 - `yarn add --dev chai @types/node @types/mocha @types/chai`
+- `npm install dotenv --save`
 
 Forking mainnet
 - `npx hardhat node --fork https://evm.cronos.org/`

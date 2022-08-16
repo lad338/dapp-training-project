@@ -5,23 +5,24 @@ import { getAllPairs, TOKEN_DECIMALS } from './config/tokens'
 import { DeployedDexAggregator } from './deployed/dexAggregator'
 import { TOKEN, TOKEN_ADDRESSES } from './config/tokens'
 import {
+    calculateQuoteForRoutes,
     calculateRouteQuote,
     computeAllRoutes,
     routeToSubPath,
+    verifyCalculatedRoutes,
 } from './functions/computeRoutes'
-import { AmountOutInput, Quote, TokenPair } from './types'
+import { AmountOutInput, Input, Quote, TokenPair } from './types'
 import { quote, quotesToQuoteMap } from './functions/quote'
 import {
     bigNumberSorter,
     routerPairToString,
     routeToString,
     toComparableValue,
-    toComparableValueToHumanReadable,
+    comparableValueToHumanReadable,
 } from './functions/util'
+import { verify } from 'crypto'
 
-const TEN = BigNumber.from(10)
-
-const input = {
+const input: Input = {
     tokenIn: TOKEN.WBTC,
     tokenOut: TOKEN.USDC,
     amount: BigNumber.from(1),
@@ -59,52 +60,26 @@ const main = async (input: AmountOutInput) => {
         []
     )
 
-    const routesWithQuotes = routes.map((route) => ({
-        route,
-        quote: calculateRouteQuote(route, quoteMap),
-    }))
+    const routeWithQuote = calculateQuoteForRoutes(routes, quoteMap)
 
-    const amounts = routesWithQuotes
-        .map((route) => ({
-            route: routeToString(route.route),
-            quote: route.quote,
-            calculatedQuote: toComparableValue(
-                route.quote.quote,
-                route.quote.decimal
-            ),
-            subPaths: routeToSubPath(route.route),
-        }))
-        .filter((it) => !it.calculatedQuote.isZero())
-
-    const getAmountsOutResults = await Promise.all(
-        amounts.map(async (it) => ({
-            ...it,
-            getAmountsOut: await dexAggregator.getAmountsOut(
-                input.amount.mul(TEN.pow(TOKEN_DECIMALS[input.tokenIn])),
-                it.subPaths
-            ),
-        }))
+    const verifiedCalculatedRoutes = await verifyCalculatedRoutes(
+        input,
+        routeWithQuote,
+        dexAggregator
     )
 
-    const sortedGetAmountsOut = getAmountsOutResults
-        .map((it) => ({
-            ...it,
-            amount: toComparableValue(
-                it.getAmountsOut,
-                TOKEN_DECIMALS[input.tokenIn]
-            ),
-        }))
-        .sort((a, b) => bigNumberSorter(a.amount, b.amount))
-        .reverse()
+    if (verifiedCalculatedRoutes.length === 0) {
+        throw 'No available path'
+    }
 
-    console.log(sortedGetAmountsOut)
+    console.log(verifiedCalculatedRoutes)
 
     console.log('best path is:')
-    console.log(sortedGetAmountsOut[0].route)
+    console.log(verifiedCalculatedRoutes[0].route)
     console.log('expected output: ')
     console.log(
-        toComparableValueToHumanReadable(
-            sortedGetAmountsOut[0].amount,
+        comparableValueToHumanReadable(
+            verifiedCalculatedRoutes[0].amount,
             TOKEN_DECIMALS[input.tokenIn],
             TOKEN_DECIMALS[input.tokenOut]
         )

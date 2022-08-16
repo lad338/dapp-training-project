@@ -4,8 +4,12 @@
         "compile": "npx hardhat compile",
         "prettier:ts": "prettier --config .prettierrc '**/*.ts' --write",
         "fork": "npx hardhat node --fork https://evm.cronos.org/",
+        "fork:block": "npx hardhat node --fork https://evm.cronos.org/ --fork-block-number 4184000",
         "deploy": "npx hardhat run ./scripts/deploy.ts --network localhost",
         "out": "npx hardhat run ./scripts/amountsOut.ts --network localhost",
+        "out:cronos": "npx hardhat run ./scripts/amountsOut.ts --network cronos",
+        "swap": "npx hardhat run ./scripts/swap.ts --network localhost",
+        "usdc": "npx hardhat run ./scripts/usdc.ts --network localhost",
         "p": "yarn prettier:ts"
     },
     "devDependencies": {
@@ -35,6 +39,7 @@
     },
     "dependencies": {
         "@openzeppelin/contracts": "^4.7.2",
+        "dotenv": "^16.0.1",
         "ethereum-multicall": "^2.14.0",
         "web3": "^1.7.5"
     }
