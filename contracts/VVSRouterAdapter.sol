@@ -6,8 +6,6 @@ import './vvs/IVVSRouter02.sol';
 import './vvs/VVSLibrary.sol';
 import './interfaces/IERC20.sol';
 
-import 'hardhat/console.sol';
-
 contract VVSRouterAdapter is IRouterAdapter {
     IVVSRouter02 public router;
 

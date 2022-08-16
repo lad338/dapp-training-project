@@ -23,10 +23,13 @@ import {
 } from './functions/util'
 import { verify } from 'crypto'
 
+const tokenIn = TOKEN.MMF
+const tokenOut = TOKEN.WBTC
+
 const input: Input = {
-    tokenIn: TOKEN.USDC,
-    tokenOut: TOKEN.WBTC,
-    amount: BigNumber.from(10).mul(TEN.pow(TOKEN_DECIMALS[TOKEN.USDC])),
+    tokenIn,
+    tokenOut,
+    amount: BigNumber.from(100).mul(TEN.pow(TOKEN_DECIMALS[tokenIn])),
 }
 
 const main = async (input: Input) => {
@@ -41,7 +44,7 @@ const main = async (input: Input) => {
         dexAggregatorAddress
     )
 
-    const pairQuotes = await quote(dexAggregator)
+    const pairQuotes = await quote()
 
     console.log(
         pairQuotes.map((it) => ({
@@ -76,7 +79,9 @@ const main = async (input: Input) => {
     console.log(verifiedCalculatedRoutes)
 
     console.log('best path is:')
-    console.log(verifiedCalculatedRoutes[0].route)
+    console.log(
+        verifiedCalculatedRoutes[0].route.map((it) => routerPairToString(it))
+    )
     console.log('expected output: ')
     console.log(
         comparableValueToHumanReadable(

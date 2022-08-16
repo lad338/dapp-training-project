@@ -6,8 +6,6 @@ import '@openzeppelin/contracts/access/Ownable.sol';
 import './interfaces/IERC20.sol';
 import './interfaces/IRouterAdapter.sol';
 
-import 'hardhat/console.sol';
-
 contract DexAggregator is Ownable {
     address[] public routers;
     address[] public supportedTokens;
@@ -72,9 +70,6 @@ contract DexAggregator is Ownable {
                 amountIn,
                 subPaths[i].path
             );
-            for (uint256 j = 0; j < amountsOut.length; j++) {
-                console.log('amountsOut %s(%s): %s', i, j, amountsOut[j]);
-            }
 
             amountIn = amountsOut[amountsOut.length - 1];
             amount = amountIn;
@@ -89,17 +84,12 @@ contract DexAggregator is Ownable {
     ) public {
         for (uint256 i = 0; i < subPaths.length; i++) {
             IRouterAdapter router = IRouterAdapter(routers[subPaths[i].router]);
-            console.log(
-                'using router with addres: %s',
-                routers[subPaths[i].router]
-            );
+            
             uint256[] memory amountsOut = router.getAmountsOut(
                 amountIn,
                 subPaths[i].path
             );
             uint256 subPathAmountOut = amountsOut[amountsOut.length - 1];
-
-            console.log('subPathAmountOut: %s', subPathAmountOut);
 
             bool transferFrom = IERC20(subPaths[i].path[0]).transferFrom(
                 i == 0 ? msg.sender : address(this),
@@ -107,8 +97,6 @@ contract DexAggregator is Ownable {
                 amountIn
             );
             require(transferFrom, 'require IERC20 transferFrom');
-
-            console.log('required IERC20 transferFrom');
 
             uint256[] memory swapedTokens = router.swapExactTokensForTokens(
                 amountIn,
@@ -118,7 +106,6 @@ contract DexAggregator is Ownable {
             );
 
             amountIn = swapedTokens[swapedTokens.length - 1];
-            console.log('(%s) successful token swap: %s', i, amountIn);
             require(
                 amountIn >= subPathAmountOut,
                 'subPathAmountOut needs to be >= getAmountsOut()'

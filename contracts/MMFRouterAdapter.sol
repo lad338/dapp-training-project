@@ -6,8 +6,6 @@ import './mmf/IMeerkatRouter02.sol';
 import './mmf/MeerkatLibrary.sol';
 import './interfaces/IERC20.sol';
 
-import 'hardhat/console.sol';
-
 contract MMFRouterAdapter is IRouterAdapter {
     IMeerkatRouter02 public router;
 

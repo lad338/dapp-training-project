@@ -3,7 +3,7 @@ import { ethers } from 'hardhat'
 import { ROUTERS } from '../config/routers'
 
 import { TOKEN, TOKEN_NAMES } from '../config/tokens'
-import { RouterPair, Route, Input, BestPath } from '../types'
+import { RouterPair, Route, Input, BestPath, TokenPair } from '../types'
 import {
     calculateQuoteForRoutes,
     computeAllRoutes,
@@ -49,15 +49,26 @@ export const routeToString = (route: Route): string => {
     )
 }
 
-export const routerPairToString = (pair: RouterPair) => {
+export const tokenPairCompressedString = (pair: TokenPair): string => {
+    return pair.tokenIn + '|' + pair.tokenOut
+}
+
+export const compressedTokenStringToToken = (s: string): TokenPair => {
+    const arr = s.split('|')
+    return {
+        tokenIn: parseInt(arr[0]),
+        tokenOut: parseInt(arr[1]),
+    }
+}
+
+export const tokenPairToString = (pair: TokenPair): string => {
     return (
-        pair.router +
-        ':(' +
-        TOKEN_NAMES[pair.pair.tokenIn] +
-        ',' +
-        TOKEN_NAMES[pair.pair.tokenOut] +
-        ')'
+        '(' + TOKEN_NAMES[pair.tokenIn] + ',' + TOKEN_NAMES[pair.tokenOut] + ')'
     )
+}
+
+export const routerPairToString = (pair: RouterPair): string => {
+    return pair.router + ':' + tokenPairToString(pair.pair)
 }
 
 export const routerPair = (
@@ -76,7 +87,7 @@ export const routerPair = (
 
 export const getAllPath = async (dexAggregator: Contract, input: Input) => {
     console.log('Listing all quotes')
-    const pairQuotes = await quote(dexAggregator)
+    const pairQuotes = await quote()
 
     console.log('Creating quote map')
     const quoteMap = quotesToQuoteMap(pairQuotes)

@@ -5,16 +5,21 @@ import 'dotenv/config'
 import { TOKEN, TOKEN_ADDRESSES, TOKEN_DECIMALS } from './config/tokens'
 import { DeployedDexAggregator } from './deployed/dexAggregator'
 import { ROUTERS } from './config/routers'
-import { getBestPath, routerPair, routerPairToString, TEN } from './functions/util'
+import {
+    getBestPath,
+    routerPair,
+    routerPairToString,
+    TEN,
+} from './functions/util'
 import { Input } from './types'
 
-const tokenIn = TOKEN.VVS
-const tokenOut = TOKEN.MMF
+const tokenIn = TOKEN.MMF
+const tokenOut = TOKEN.VVS
 
 const input: Input = {
     tokenIn,
     tokenOut,
-    amount: BigNumber.from(100000).mul(TEN.pow(TOKEN_DECIMALS[tokenIn])),
+    amount: BigNumber.from(2200).mul(TEN.pow(TOKEN_DECIMALS[tokenIn])),
 }
 
 const main = async (input: Input) => {
@@ -35,7 +40,7 @@ const main = async (input: Input) => {
     const bestPath = await getBestPath(dexAggregator, input)
 
     console.log('Using best path:')
-    console.log(bestPath.route.map(it => routerPairToString(it)))
+    console.log(bestPath.route.map((it) => routerPairToString(it)))
     console.log('Expected amountOut:')
     console.log(bestPath.amountOut)
     console.log(
