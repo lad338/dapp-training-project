@@ -111,6 +111,10 @@ export const getBestPath = async (
     console.log('Finding All paths')
     const allPath = await getAllPath(dexAggregator, input)
 
+    if (allPath.length === 0) {
+        throw 'No path can be found, please try again'
+    }
+
     console.log('Returning best path')
     return {
         input,

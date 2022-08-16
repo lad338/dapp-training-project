@@ -1,0 +1,445 @@
+yarn run v1.22.18
+$ npx hardhat run ./scripts/swap.ts --network localhost
+envAddress: 0x06d82d7B709F8f586829ad3EB81F5720c6dAEcc9
+signer address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+dexAggregatorAddress: 0x68B1D87F95878fE05B998F19b66F4baba5De1aed
+Finding All paths
+Listing all quotes
+Creating quote map
+Finding all possible routes
+Calculating quote for routes
+Verifying Calculated routes
+Getting AmountsOut for all route with subPaths
+input.amount: 
+BigNumber { value: "100000000" }
+[
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4103" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41030000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a"]},{"router":1,"path":["0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4136" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41360000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23"]},{"router":1,"path":["0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "1321" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "13210000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":4},"router":0},{"pair":{"tokenIn":4,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x66e428c3f67a68878562e79A0234c1F83c208770"]},{"router":1,"path":["0x66e428c3f67a68878562e79A0234c1F83c208770","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "191" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "1910000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":4},"router":0},{"pair":{"tokenIn":4,"tokenOut":5},"router":0},{"pair":{"tokenIn":5,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x66e428c3f67a68878562e79A0234c1F83c208770","0xF2001B145b43032AAF5Ee2884e456CCd805F677D"]},{"router":1,"path":["0xF2001B145b43032AAF5Ee2884e456CCd805F677D","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "2" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "20000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":4},"router":0},{"pair":{"tokenIn":4,"tokenOut":5},"router":1},{"pair":{"tokenIn":5,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x66e428c3f67a68878562e79A0234c1F83c208770"]},{"router":1,"path":["0x66e428c3f67a68878562e79A0234c1F83c208770","0xF2001B145b43032AAF5Ee2884e456CCd805F677D","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "1320" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "13200000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":4},"router":1},{"pair":{"tokenIn":4,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23"]},{"router":1,"path":["0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x66e428c3f67a68878562e79A0234c1F83c208770","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "208" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2080000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":5},"router":0},{"pair":{"tokenIn":5,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0xF2001B145b43032AAF5Ee2884e456CCd805F677D"]},{"router":1,"path":["0xF2001B145b43032AAF5Ee2884e456CCd805F677D","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "209" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2090000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":5},"router":1},{"pair":{"tokenIn":5,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23"]},{"router":1,"path":["0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0xF2001B145b43032AAF5Ee2884e456CCd805F677D","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4129" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41290000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":2},"router":1},{"pair":{"tokenIn":2,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a"]},{"router":1,"path":["0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "15" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "150000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":0},{"pair":{"tokenIn":1,"tokenOut":4},"router":0},{"pair":{"tokenIn":4,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x66e428c3f67a68878562e79A0234c1F83c208770"]},{"router":1,"path":["0x66e428c3f67a68878562e79A0234c1F83c208770","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "307" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "3070000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":1},"router":1},{"pair":{"tokenIn":1,"tokenOut":0},"router":0}]',
+    displaySubPaths: '[{"router":1,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xe44Fd7fCb2b1581822D0c862B68222998a0c299a"]},{"router":0,"path":["0xe44Fd7fCb2b1581822D0c862B68222998a0c299a","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4160" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41600000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":2},"router":0},{"pair":{"tokenIn":2,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23"]},{"router":1,"path":["0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4172" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41720000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":2},"router":1},{"pair":{"tokenIn":2,"tokenOut":0},"router":0}]',
+    displaySubPaths: '[{"router":1,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23"]},{"router":0,"path":["0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "1333" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "13330000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":4},"router":0},{"pair":{"tokenIn":4,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0x66e428c3f67a68878562e79A0234c1F83c208770"]},{"router":1,"path":["0x66e428c3f67a68878562e79A0234c1F83c208770","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3746" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "37460000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":4},"router":1},{"pair":{"tokenIn":4,"tokenOut":0},"router":0}]',
+    displaySubPaths: '[{"router":1,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0x66e428c3f67a68878562e79A0234c1F83c208770"]},{"router":0,"path":["0x66e428c3f67a68878562e79A0234c1F83c208770","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "207" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2070000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":5},"router":0},{"pair":{"tokenIn":5,"tokenOut":0},"router":1}]',
+    displaySubPaths: '[{"router":0,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xF2001B145b43032AAF5Ee2884e456CCd805F677D"]},{"router":1,"path":["0xF2001B145b43032AAF5Ee2884e456CCd805F677D","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3919" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "39190000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    displayRoute: '[{"pair":{"tokenIn":3,"tokenOut":5},"router":1},{"pair":{"tokenIn":5,"tokenOut":0},"router":0}]',
+    displaySubPaths: '[{"router":1,"path":["0xc21223249CA28397B4B6541dfFaEcC539BfF0c59","0xF2001B145b43032AAF5Ee2884e456CCd805F677D"]},{"router":0,"path":["0xF2001B145b43032AAF5Ee2884e456CCd805F677D","0x062E66477Faf219F25D27dCED647BF57C3107d52"]}]'
+  }
+]
+withGetAmountsOut:
+[
+  {
+    route: [ [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3989" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "39890000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "151012" }
+  },
+  {
+    route: [ [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4175" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41750000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "417522" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "322" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "3220000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "256037" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4103" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41030000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "413247" }
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4136" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41360000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "413030" }
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4136" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41360000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "412992" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3707" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "37070000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "52475" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "1321" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "13210000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "1885" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3555" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "35550000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "27226" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "191" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "1910000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "221" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "54" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "540000000000000000000000000000" },
+    subPaths: [ [Object], [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "60" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "2" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "20000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "48" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "229" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2290000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "2891" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3703" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "37030000000000000000000000000000" },
+    subPaths: [ [Object], [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "52468" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "1320" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "13200000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "1885" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3872" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "38720000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "50772" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "208" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2080000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "221" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3879" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "38790000000000000000000000000000" },
+    subPaths: [ [Object], [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "50491" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "209" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2090000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "221" }
+  },
+  {
+    route: [ [Object], [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "237" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2370000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "2905" }
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4129" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41290000000000000000000000000000" },
+    subPaths: [ [Object], [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "412561" }
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4129" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41290000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "412522" }
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "42" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "420000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "32750" }
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "15" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "150000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "1849" }
+  },
+  {
+    route: [ [Object], [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "5" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "50000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "9578" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "307" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "3070000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "85686" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3907" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "39070000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "97558" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4160" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41600000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "416544" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4160" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41600000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "416504" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4172" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41720000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "417654" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "4172" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "41720000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "417614" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3740" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "37400000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "52556" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "1333" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "13330000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "1885" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3746" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "37460000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "52567" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "1335" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "13350000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "1885" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3850" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "38500000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "46766" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "207" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2070000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "221" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "3919" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "39190000000000000000000000000000" },
+    subPaths: [ [Object], [Object] ],
+    getAmountsOut: BigNumber { value: "50858" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "211" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "2110000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "221" }
+  },
+  {
+    route: [ [Object], [Object] ],
+    calculatedQuote: { quote: BigNumber { value: "98" }, decimal: 8 },
+    comparableCalculatedQuote: BigNumber { value: "980000000000000000000000000000" },
+    subPaths: [ [Object] ],
+    getAmountsOut: BigNumber { value: "1406" }
+  }
+]
+Returning best path
+Using best path:
+[
+  { pair: { tokenIn: 3, tokenOut: 2 }, router: 1 },
+  { pair: { tokenIn: 2, tokenOut: 0 }, router: 0 }
+]
+Expected amountOut:
+BigNumber { value: "417654" }
+0.00417654
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

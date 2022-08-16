@@ -87,38 +87,45 @@ contract DexAggregator is Ownable {
         SubPath[] calldata subPaths,
         address to
     ) public {
-        uint256 amountOut;
         for (uint256 i = 0; i < subPaths.length; i++) {
             IRouterAdapter router = IRouterAdapter(routers[subPaths[i].router]);
+            console.log(
+                'using router with addres: %s',
+                routers[subPaths[i].router]
+            );
             uint256[] memory amountsOut = router.getAmountsOut(
                 amountIn,
                 subPaths[i].path
             );
             uint256 subPathAmountOut = amountsOut[amountsOut.length - 1];
 
-            require(
-                IERC20(subPaths[i].path[0]).transferFrom(
-                    msg.sender,
-                    address(router),
-                    amountIn
-                ),
-                'require IERC20 transferForm'
+            console.log('subPathAmountOut: %s', subPathAmountOut);
+
+            bool transferFrom = IERC20(subPaths[i].path[0]).transferFrom(
+                i == 0 ? msg.sender : address(this),
+                address(router),
+                amountIn
             );
+            require(transferFrom, 'require IERC20 transferFrom');
+
+            console.log('required IERC20 transferFrom');
+
             uint256[] memory swapedTokens = router.swapExactTokensForTokens(
                 amountIn,
                 subPathAmountOut,
                 subPaths[i].path,
-                to
+                i == (subPaths.length - 1) ? to : address(this)
             );
-            amountOut = swapedTokens[swapedTokens.length - 1];
+
+            amountIn = swapedTokens[swapedTokens.length - 1];
+            console.log('(%s) successful token swap: %s', i, amountIn);
             require(
-                amountOut >= subPathAmountOut,
+                amountIn >= subPathAmountOut,
                 'subPathAmountOut needs to be >= getAmountsOut()'
             );
-            amountIn = subPathAmountOut;
         }
         require(
-            amountOut >= amoutOutMin,
+            amountIn >= amoutOutMin,
             'amountOut needs to be >= amountOutMin'
         );
     }

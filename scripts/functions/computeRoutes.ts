@@ -168,7 +168,7 @@ export const verifyCalculatedRoutes = async (
         }))
     )
 
-    console.log("withGetAmountsOut:")
+    console.log('withGetAmountsOut:')
     console.log(withGetAmountsOut)
 
     return withGetAmountsOut
