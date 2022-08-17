@@ -12,6 +12,7 @@
         "swap": "npx hardhat run ./scripts/swap.ts --network localhost",
         "usdc": "npx hardhat run ./scripts/usdc.ts --network localhost",
         "try": "npx hardhat run ./scripts/try.ts --network localhost",
+        "deploy:main": "npx hardhat run ./scripts/deployMainnet.ts --network cronos",
         "p": "yarn prettier:ts"
     },
     "devDependencies": {

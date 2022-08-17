@@ -1,6 +1,6 @@
 import Multicall2 from '../../artifacts/contracts/Multicall2.sol/Multicall2.json'
 
 export const DeployedMultiCall2 = {
-    address: '0x59b670e9fA9D0A427751Af201D676719a970857b',
+    address: '0xbDaBEe7ac5eaa07094268f506289B8A7958d56cd',
     abi: Multicall2.abi,
 }

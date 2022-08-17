@@ -1,0 +1,5 @@
+envAddress: 0x06d82d7B709F8f586829ad3EB81F5720c6dAEcc9
+vvsRouterAdapter deployed at: 0xaaB14886Dda079A76204D58c6beBF33215Ce16a4
+mmfRouterAdapter deployed at: 0x9d72e33316c16e4De64EB5bC361B5E367ba2BAB4
+dexAggregator deployed at: 0x96491CaB63297508210bE0f8ceCA307890A8EC2F
+multicall2 deployed at: 0xbDaBEe7ac5eaa07094268f506289B8A7958d56cd

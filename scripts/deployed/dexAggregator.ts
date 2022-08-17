@@ -2,5 +2,5 @@ import DexAggregator from '../../artifacts/contracts/DexAggregator.sol/DexAggreg
 
 export const DeployedDexAggregator = {
     abi: DexAggregator.abi,
-    address: '0x68B1D87F95878fE05B998F19b66F4baba5De1aed',
+    address: '0x96491CaB63297508210bE0f8ceCA307890A8EC2F',
 }

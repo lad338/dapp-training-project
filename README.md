@@ -23,3 +23,8 @@ Running:
 - Swaping native token for USDC: `yarn usdc`
 - Quotes and find path: `yarn out`
 - Swap: `yarn swap`
+
+Update values
+- contract addresses: `./scripts/deployed/*.ts`
+- input (tokenIn, tokenOut, amount): `./scripts/config/input.ts`
+- add tokens: `./scripts/config/tokens.ts`

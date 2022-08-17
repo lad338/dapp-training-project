@@ -12,20 +12,20 @@ import {
     TEN,
 } from './functions/util'
 import { Input } from './types'
+import { CONFIG } from './config/input'
 
-const tokenIn = TOKEN.MMF
-const tokenOut = TOKEN.VVS
+const tokenIn = CONFIG.tokenIn
+const tokenOut = CONFIG.tokenOut
+const maxJumps = CONFIG.maxJumps
 
 const input: Input = {
     tokenIn,
     tokenOut,
-    amount: BigNumber.from(2200).mul(TEN.pow(TOKEN_DECIMALS[tokenIn])),
+    amount: CONFIG.amount,
 }
 
 const main = async (input: Input) => {
-    const envAddress = process.env.ADDRESS
-    console.log('envAddress: ' + envAddress)
-
+    
     const [signer] = await ethers.getSigners()
     console.log('signer address: ' + signer.address)
 
@@ -37,7 +37,7 @@ const main = async (input: Input) => {
         dexAggregatorAddress
     )
 
-    const bestPath = await getBestPath(dexAggregator, input)
+    const bestPath = await getBestPath(dexAggregator, input, maxJumps)
 
     console.log('Using best path:')
     console.log(bestPath.route.map((it) => routerPairToString(it)))

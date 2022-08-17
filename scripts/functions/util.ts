@@ -85,7 +85,11 @@ export const routerPair = (
     }
 }
 
-export const getAllPath = async (dexAggregator: Contract, input: Input) => {
+export const getAllPath = async (
+    dexAggregator: Contract,
+    input: Input,
+    maxJumps: number
+) => {
     console.log('Listing all quotes')
     const pairQuotes = await quote()
 
@@ -97,7 +101,7 @@ export const getAllPath = async (dexAggregator: Contract, input: Input) => {
         input.tokenIn,
         input.tokenOut,
         pairQuotes.map((it) => it.pair),
-        5,
+        maxJumps,
         new Set(),
         []
     )
@@ -117,10 +121,11 @@ export const getAllPath = async (dexAggregator: Contract, input: Input) => {
 
 export const getBestPath = async (
     dexAggregator: Contract,
-    input: Input
+    input: Input,
+    maxJumps: number
 ): Promise<BestPath> => {
     console.log('Finding All paths')
-    const allPath = await getAllPath(dexAggregator, input)
+    const allPath = await getAllPath(dexAggregator, input, maxJumps)
 
     if (allPath.length === 0) {
         throw 'No path can be found, please try again'

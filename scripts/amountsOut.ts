@@ -1,35 +1,31 @@
 import { ethers } from 'hardhat'
 import { BigNumber } from 'ethers'
 
-import { getAllPairs, TOKEN_DECIMALS } from './config/tokens'
+import { TOKEN_DECIMALS } from './config/tokens'
 import { DeployedDexAggregator } from './deployed/dexAggregator'
-import { TOKEN, TOKEN_ADDRESSES } from './config/tokens'
+import { TOKEN } from './config/tokens'
 import {
     calculateQuoteForRoutes,
-    calculateRouteQuote,
     computeAllRoutes,
-    routeToSubPath,
     verifyCalculatedRoutes,
 } from './functions/computeRoutes'
-import { Input, Quote, TokenPair } from './types'
+import { Input } from './types'
 import { quote, quotesToQuoteMap } from './functions/quote'
 import {
-    bigNumberSorter,
     routerPairToString,
-    routeToString,
-    toComparableValue,
     comparableValueToHumanReadable,
     TEN,
 } from './functions/util'
-import { verify } from 'crypto'
+import { CONFIG } from './config/input'
 
-const tokenIn = TOKEN.MMF
-const tokenOut = TOKEN.WBTC
+const tokenIn = CONFIG.tokenIn
+const tokenOut = CONFIG.tokenOut
+const maxJumps = CONFIG.maxJumps
 
 const input: Input = {
     tokenIn,
     tokenOut,
-    amount: BigNumber.from(100).mul(TEN.pow(TOKEN_DECIMALS[tokenIn])),
+    amount: CONFIG.amount,
 }
 
 const main = async (input: Input) => {
@@ -59,7 +55,7 @@ const main = async (input: Input) => {
         input.tokenIn,
         input.tokenOut,
         pairQuotes.map((it) => it.pair),
-        5,
+        maxJumps,
         new Set(),
         []
     )

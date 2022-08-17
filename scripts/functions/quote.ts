@@ -21,7 +21,6 @@ const multicall = new Multicall({
 })
 
 export const quote = async (): Promise<Quote[]> => {
-
     const mcResults = await multicallQuotes()
 
     return mcResults.filter((it) => !it.amount.isZero())

@@ -14,6 +14,7 @@ export enum TOKEN {
     TUSD,
     ATOM,
     ELON,
+    SHIB,
 }
 
 export const TOKENS = [
@@ -30,6 +31,7 @@ export const TOKENS = [
     TOKEN.TUSD,
     TOKEN.ATOM,
     TOKEN.ELON,
+    TOKEN.SHIB,
 ]
 
 export const TOKEN_DECIMALS = {
@@ -46,6 +48,7 @@ export const TOKEN_DECIMALS = {
     [TOKEN.SINGLE]: 18,
     [TOKEN.ELON]: 18,
     [TOKEN.ATOM]: 6,
+    [TOKEN.SHIB]: 18,
 }
 
 export const TOKEN_ADDRESSES = {
@@ -62,6 +65,7 @@ export const TOKEN_ADDRESSES = {
     [TOKEN.SINGLE]: '0x0804702a4e749d39a35fde73d1df0b1f1d6b8347',
     [TOKEN.ELON]: '0x02DCcaf514C98451320a9365C5b46C61d3246ff3',
     [TOKEN.ATOM]: '0xB888d8Dd1733d72681b30c00ee76BDE93ae7aa93',
+    [TOKEN.SHIB]: '0xbED48612BC69fA1CaB67052b42a95FB30C1bcFee',
 }
 
 export const getAllPairs = (): TokenPair[] => {
@@ -98,4 +102,5 @@ export const TOKEN_NAMES = {
     [TOKEN.SINGLE]: 'SINGLE',
     [TOKEN.ELON]: 'ELON',
     [TOKEN.ATOM]: 'ATOM',
+    [TOKEN.SHIB]: 'SHIB',
 }

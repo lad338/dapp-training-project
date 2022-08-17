@@ -8,8 +8,8 @@ const main = async () => {
 
     const result = await swapCROForUSDC(
         signer.address,
-        '3000',
-        BigNumber.from(420 * 1000000)
+        '9000',
+        BigNumber.from(1200 * 1000000)
     )
     console.log(result)
 }
